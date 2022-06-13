@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata: 
+  name: firstdeploy
+  labels: 
+    appname: firstdeploy
+  annotations:
+    kubernetes.io/change-cause: "my custom message" 
+
+
+spec:
+  replicas: 10
+  minReadySeconds: 30
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+    type: RollingUpdate
+
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      name: firstpod
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: firstcontainer
+        image: coolgourav147/nginx-custom:v2

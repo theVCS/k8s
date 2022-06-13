@@ -1,0 +1,42 @@
+Features of kubernetes
+1. Automatic bin packing
+2. service discovery & load balancing
+3. storage orchestration
+4. self-healing
+
+
+1. Automatic bin packing ->
+Suppose we have 5 servers each having 10 GB of RAM. We have a list of jobs to run on these 5 servers
+Every job has different resources requirement
+
+Kubernetes will take care of packing these jobs in bins in the most efficient way
+
+when we specify a Pod, you can optionally specify how much CPU and memory (RAM) each container needs. When containers have resources requests specified, the scheduler can make better decisions about which nodes to place Pods on
+
+
+2. service discovery & load balancing ->
+kubernetes doesn't run containers directly instead it wraps one or more containers into a higher-level structure called a Pod
+
+A pod contains:
+-> an application container (or, in some cases, multiple container)
+-> storage resources
+-> a unique network IP
+
+Pods that have same set of functions are abstracted into sets, called services. 
+
+Kubernetes gives pods their own IP address and a single DNS name for a set of Pods, and can load-balance across them
+
+With this system, Kubernetes has a control over network and communication between pods and can load-balance across them.
+
+
+
+3. storage orchestration -> 
+Containers running inside a pod may need to store data
+Pods can have storage volume  
+
+
+
+4. self-healing: 
+if container fails -> restart container
+if node dies -> replaces and reschedule containers on other node
+if container doesn't respond to user defined health check -> kills container

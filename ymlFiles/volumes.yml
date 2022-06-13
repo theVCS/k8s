@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+
+metadata: 
+  name: test-vol
+spec:
+  containers:
+  - image: coolgourav147/nginx-custom
+    name: test-controller
+    volumeMounts:
+    - mountPath: /data
+      name: first-volume
+  volumes:
+  - name: first-volume
+    emptyDir: {}

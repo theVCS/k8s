@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: pod2
+  namespace: default
+  labels:
+    app: myapp2
+    type: frontend
+spec:
+  containers:
+    - name: firstcontainer
+      image: coolgourav147/nginx-custom:v2
+      env:
+        - name: myname
+          value: Prince
+        - name: variablefromconfigma #environment variable name
+          valueFrom:
+            configMapKeyRef:
+              key:  variable1
+              name: configMapName
+      resources:
+        requests:
+          memory: 2Mi
+          cpu: 500m
+        limits:
+          memory: 200Mi
+          cpu: 800m

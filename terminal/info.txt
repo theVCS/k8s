@@ -1,0 +1,55 @@
+{
+  "adminUserEnabled": false,
+  "anonymousPullEnabled": false,
+  "creationDate": "2022-06-11T17:58:33.017334+00:00",
+  "dataEndpointEnabled": false,
+  "dataEndpointHostNames": [],
+  "encryption": {
+    "keyVaultProperties": null,
+    "status": "disabled"
+  },
+  "id": "/subscriptions/65b33029-581a-4551-861c-eace2ff01d74/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/princeregistry",
+  "identity": null,
+  "location": "eastus",
+  "loginServer": "princeregistry.azurecr.io",
+  "name": "princeregistry",
+  "networkRuleBypassOptions": "AzureServices",
+  "networkRuleSet": null,
+  "policies": {
+    "exportPolicy": {
+      "status": "enabled"
+    },
+    "quarantinePolicy": {
+      "status": "disabled"
+    },
+    "retentionPolicy": {
+      "days": 7,
+      "lastUpdatedTime": "2022-06-11T17:58:40.390586+00:00",
+      "status": "disabled"
+    },
+    "trustPolicy": {
+      "status": "disabled",
+      "type": "Notary"
+    }
+  },
+  "privateEndpointConnections": [],
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "resourceGroup": "myResourceGroup",
+  "sku": {
+    "name": "Basic",
+    "tier": "Basic"
+  },
+  "status": null,
+  "systemData": {
+    "createdAt": "2022-06-11T17:58:33.017334+00:00",
+    "createdBy": "praveenk.ec.19@nitj.ac.in",
+    "createdByType": "User",
+    "lastModifiedAt": "2022-06-11T17:58:33.017334+00:00",
+    "lastModifiedBy": "praveenk.ec.19@nitj.ac.in",
+    "lastModifiedByType": "User"
+  },
+  "tags": {},
+  "type": "Microsoft.ContainerRegistry/registries",
+  "zoneRedundancy": "Disabled"
+}

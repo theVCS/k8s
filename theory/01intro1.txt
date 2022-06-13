@@ -1,0 +1,39 @@
+kubernetes is a greek word for helmsman or captain of a ship
+kubernetes  -> k8s
+
+k8s -> is a container management (orchestration) tool
+    -> developed by google lab (& later donated to CNCF -> cloud native computive foundation)
+    -> open source
+    -> written in golang
+
+container management / orchestration tool -> manages containerized application 
+container management tool automates deploying, scaling and managing containerized application on a group of service
+
+
+What is docker?
+Example -> the developer packs the application with all its dependencies, environment variables etc in a container and now this container can be shipped using container platform (eg docker). advantages: as application as available with all its dependencies and environment variable it will work fine on all systems.
+-> Thus docker is a tool designed to make it easier to deploy and run applications by using containers.
+
+what are containerized application?
+-> containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as on package.
+
+
+Where does kubernetes come in play then?
+Organizations have to use multiple containers to
+Ensure availability
+Load Balancing
+scale up and down based on user load
+
+Thus we have container management tool, like, kubernetes, docker swarm, apache mesos marathon
+
+Here management involves -> deploying, scheduling, scaling, load balancing, batch execution, rollbacks, monitoring
+
+
+                kubernetes
+                    |
+            container management tool
+                    |
+            manages containerized application
+                    |
+        application available on a container platform like docker
+

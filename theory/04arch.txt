@@ -1,0 +1,47 @@
+when we deploy kubernetes we get a cluster
+a cluster is a set of machines called nodes
+A cluster has atleast one worker node and atleast one master node.  
+
+
+A node can be physical machine, virtual machine, VM on cloud
+
+Inside node we have pods, inside a pod we can have one container 
+
+
+
+
+4 Components of master node
+3 Components of worker node
+Addons
+How master and worker interact
+
+
+
+
+Mater node
+responsible for managing the cluster
+monitors nodes and pods in a cluster
+When a node fails move the workload of the failed node to another worker node
+
+4 components of master node
+-> api server (JSON over HTTP)
+-> scheduler (schedules pods on nodes)
+-> controller manager (runs controller)
+-> etcd ()
+
+apis -> allow applications to communicate with one another. It is the front-end for the Kubernetes control plane
+Exposes API for almost every operation
+The users, management devices, and command line interfaces all talk to the API server to interact with the Kubernetes cluster.
+
+
+scheduler pods across multiple nodes
+Components on the master that watches newly created pods that have no node assigned, and selects a node for them to run on
+The scheduler obtains from etcd, via the API server, resource usage data for each worker node in cluster
+scheduler gets the information for the hardware configuaration from configuration file and schedules the pods on nodes accordingly
+
+
+Control Manager -> This is a component on the master that runs controller 
+The cloud controller manager runs controllers reponsible to interact with the underlying infrastructure of a cloud provider when nodes become unavailable,  to manage storage volumes when provided by cloud service, and to manage load balancing and routing.
+Kube-controller-manager-> node controller, replication controller, endpoints controller, service account and token controller
+
+

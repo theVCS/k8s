@@ -1,0 +1,45 @@
+05 Automated rollouts and rollbacks
+06 secret and configuration management
+07 batch execution
+08 horizontal scaling
+
+
+05 Automated rollouts and rollbacks
+rollouts -> deploy changes to the application or its configuration
+rollbacks -> revert the changes & restore to previous state
+
+kubernetes progressively rolls out changes to your application or its configuration, while monitoring application health to ensure it doesn't kill all your instances at the same time. If something goes wrong, Kubernetes will rollback the change for you.
+Ensures there is no downtime during the process
+
+
+
+
+
+
+06 secret and configuration management
+
+In kubernetes sensitive data like passwords, keys, tokens are handled using Secrets.
+Secret is Kubernetes object created outside pods and containers.
+
+
+In kubernetes configurations are handled using config maps. Config map is a Kubernetes object. Created outside pods and containers.
+Deploy and update secrets and application configuration without rebuilding your image and without exposing secrets in your stack configuration.
+
+secret and configuration are stored in etcd (a key-value datastore) Max Storage -> 1 MB
+
+
+
+
+07 batch execution-> 
+batch job require an executable/process to be run to completion
+In kubernetes run to completion jobs are primarily used for batch processing
+Each job creates more pods.
+During job execution if any container or pods fails, Job Controller will reshecdule the container, pods on another nodes
+Can run multiple pods in parallel and can scale up if required as the job is completed, the pods will move from running state to shut down state.
+
+
+08 horizontal scaling
+We can scale up or down the containers 
+- using commands
+- from the dashboard
+- automatically based on CPU usage

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata: 
+  name: azuredeploy
+  labels: 
+    name: firstdeploy
+  annotations:
+    kubernetes.io/change-cause: "my first deployment" 
+
+
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      name: mypods
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: mycontainer
+        image: coolgourav147/nginx-custom
